@@ -4,13 +4,17 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
   
 use App\Http\Controllers\API\RegisterController;
+
+use App\Http\Controllers\DepartmentsController;
+use App\Http\Controllers\RolesController;
+use App\Http\Controllers\StaffController;
+=======
 use App\Http\Controllers\CourseContoller;
 use App\Http\Controllers\SchoolController;
 use App\Http\Controllers\GroupController;
 use App\Http\Controllers\AssesmentItemController;
 
 
-  
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -22,6 +26,25 @@ Route::controller(RegisterController::class)->group(function(){
     Route::post('login', 'login');
 });
 
+Route::controller(RolesController::class)->group(function(){
+    Route::get('roles/{id?}','index');
+    Route::post('roles','create');
+    Route::delete('roles/{id}/','destroy');
+});
+Route::controller(DepartmentsController::class)->group(function(){
+    Route::get("departments/{id?}",'index');
+    
+    Route::post('departments','create');
+    Route::patch('departments/{id?}','update');
+});
+Route::controller(StaffController::class) -> group(function(){
+    Route::get("staff/{id?}",'index');
+    Route::post('staff','create');
+    Route::delete('staff/{id?}','destroy');
+    Route::put('staff/{id?}','update');
+
+});
+=======
 // Route::get('/school',function(){
 //     return School::all();
 // });
@@ -45,6 +68,7 @@ Route::get('/courses/search/{name}',[GroupController::class,'search']);
 Route::resource('assesment',AssesmentItemController::class);
 Route::get('/assesment/search/{name}',[AssesmentItemController::class,'search']);
      
+
 Route::middleware('auth:sanctum')->group( function () {
     
 });
