@@ -26,6 +26,9 @@ Route::GET('/genericlayout/layout', function () {
     return view('genericlayout/layout');
 });
 
+Route::GET('/genericlayout/general', function () {
+    return view('genericlayout/general');
+});
 //Route :: get('/students','App\Http\Controllers\StudentController@show_students');
 Route :: get('/students/timetable','App\Http\Controllers\StudentController@show_timetable');
 Route :: get('/students/units','App\Http\Controllers\StudentController@show_units');

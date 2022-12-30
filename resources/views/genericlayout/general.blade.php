@@ -1,4 +1,4 @@
-<!--This is a generic layout with a form-->
+
 
 
 <!DOCTYPE html>
@@ -92,30 +92,27 @@
         <section>
 
 
-        <body>
-            <section class="shopping-cart">
+            <form action="" method="post" class="add-product-form" enctype="multipart/form-data">
+               
+                <h3>Add Course</h3>
 
-            <h1 class="heading" style="margin-left: 180px;">View Students</h1>
-                
+                <input type="text" name="p_name" placeholder="enter the course name" class="box" required>
 
-                <table style="margin-left: 200px;">
+                <select name="p_category" class="box">
+                    <option value="" disabled selected hidden>enter the category</option>
+                    <option value="humanities">Humanities</option>
+                    <option value="mathematics">Mathematics</option>
+                    <option value="equipment">Equipment</option>
+                    <option value="housekeeping">House Keeping</option>
+                    <option value="utensils">Utensils</option>
+                </select>
 
-                    <thead>
-                        <th>student_id</th>
-                        <th>name</th>
-                        <th>course</th>
-                        <th>email</th>
-                        <th>phone</th>
-                        <th>DOB</th>
-                        <th>Address</th>
-                     
-                    </thead>
+                <input type="number" name="p_price" min="0" placeholder="enter the lecturer name" class="box" required>
+                <input type="date" name="p_quantity" min="0" placeholder="enter the termdates" class="box" required>
 
-                    <tbody>
-                        
-                    </tbody>
-                </table>
-            </section>
+
+                <input type="submit" value="add the course" name="add_product" class="btn">
+            </form>
 
         </section>
 
