@@ -8,11 +8,13 @@ use App\Http\Controllers\API\RegisterController;
 use App\Http\Controllers\DepartmentsController;
 use App\Http\Controllers\RolesController;
 use App\Http\Controllers\StaffController;
-=======
+
 use App\Http\Controllers\CourseContoller;
 use App\Http\Controllers\SchoolController;
 use App\Http\Controllers\GroupController;
 use App\Http\Controllers\AssesmentItemController;
+use App\Http\Controllers\AnnouncementController;
+use App\Http\Controllers\ClassAllocationController;
 
 
 /*
@@ -44,20 +46,9 @@ Route::controller(StaffController::class) -> group(function(){
     Route::put('staff/{id?}','update');
 
 });
-=======
-// Route::get('/school',function(){
-//     return School::all();
-// });
 
-// Route::get('/school',[SchoolController::class,'index']);
 
-// Route::controller(SchoolController::class)->group(function(){
-//     Route::get('schools', 'index');
-//     Route::post('schools', 'store');
-// });
 
-Route::resource('schools',SchoolController::class);
-Route::get('/schools/search/{name}',[SchoolController::class,'search']);
 
 Route::resource('courses',CourseContoller::class);
 Route::get('/courses/search/{name}',[CourseContoller::class,'search']);
@@ -69,7 +60,17 @@ Route::resource('assesment',AssesmentItemController::class);
 Route::get('/assesment/search/{name}',[AssesmentItemController::class,'search']);
      
 
+Route::resource('announcement',AnnouncementController::class);
+Route::get('/announcement/lecturers/{lecid}',[AnnouncementController::class,'searchLecturer']);
+Route::get('/announcement/students/{studid}',[AnnouncementController::class,'searchStudent']);
+
+Route::resource('allocation',ClassAllocationController::class);
+Route::get('/allocation/lecturers/{lecid}',[ClassAllocationController::class,'searchLecturer']);
+
+
+
 Route::middleware('auth:sanctum')->group( function () {
-    
+    Route::resource('schools',SchoolController::class);
+    Route::get('/schools/search/{name}',[SchoolController::class,'search']);  
 });
 

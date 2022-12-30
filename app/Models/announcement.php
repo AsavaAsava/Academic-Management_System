@@ -5,13 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class AssesmentItem extends Model
+class announcement extends Model
 {
     use HasFactory;
-    protected $table = 'Assessment_Items';
-    protected $fillable =[
-        'name',
-        'course',
-        'group'
+    protected $fillable=[
+        'title','description','recepient','lecturer'
     ];
 }
