@@ -18,6 +18,14 @@ Route::GET('/', function () {
     return view('welcome');
 });
 
+Route::GET('/genericlayout/generallayout', function () {
+    return view('genericlayout/generallayout');
+});
+
+Route::GET('/genericlayout/layout', function () {
+    return view('genericlayout/layout');
+});
+
 //Route :: get('/students','App\Http\Controllers\StudentController@show_students');
 Route :: get('/students/timetable','App\Http\Controllers\StudentController@show_timetable');
 Route :: get('/students/units','App\Http\Controllers\StudentController@show_units');
@@ -26,4 +34,4 @@ Route :: get('/students/attendance', 'App\Http\Controllers\StudentController@sho
 Route :: get('/students/coursework_marks','App\Http\Controllers\StudentController@show_coursework_marks');
 Route :: get('/students/student_details','App\Http\Controllers\StudentController@show_student_details');
 
-Route::resource('students', StudentController::class);
+Route::resource('students', StudentsController::class);
