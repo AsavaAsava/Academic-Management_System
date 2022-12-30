@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\StudentsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,8 +17,24 @@ use Illuminate\Support\Facades\Route;
 Route::GET('/', function () {
     return view('welcome');
 });
-// Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::GET('/genericlayout/generallayout', function () {
+    return view('genericlayout/generallayout');
+});
 
-// Route::get('/login',[CourseContoller::class,'search']);
+Route::GET('/genericlayout/layout', function () {
+    return view('genericlayout/layout');
+});
+
+Route::GET('/genericlayout/general', function () {
+    return view('genericlayout/general');
+});
+//Route :: get('/students','App\Http\Controllers\StudentController@show_students');
+Route :: get('/students/timetable','App\Http\Controllers\StudentController@show_timetable');
+Route :: get('/students/units','App\Http\Controllers\StudentController@show_units');
+Route :: get('/students/fees', 'App\Http\Controllers\StudentController@show_fees');
+Route :: get('/students/attendance', 'App\Http\Controllers\StudentController@show_attendance');
+Route :: get('/students/coursework_marks','App\Http\Controllers\StudentController@show_coursework_marks');
+Route :: get('/students/student_details','App\Http\Controllers\StudentController@show_student_details');
+
+Route::resource('students', StudentsController::class);
