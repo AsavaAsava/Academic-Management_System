@@ -16,9 +16,9 @@
         <h2 id="text-logo">Stellar School</h2>
         <div class="nav-links">
             <a href="/admin/admissions/" class="@if (Request::is('admin/admissions')){{'active'}}@endif nav-link">Admissions</a>
-            <a href="@if (Request::is('admin/notices')){{'active'}}@endif nav-link"" class="nav-link">Announcements</a>
-            <a href="" class="@if (Request::is('admin/staff')){{'active'}}@endif nav-link">Staff</a>
-            <a href="/admin/departments" class="@if (Request::is('admin/departments')){{'active'}}@endif nav-link">Departments</a>
+            <a href="/admin/notices/" class="@if (Request::is('admin/notices')){{'active'}}@endif nav-link">Announcements</a>
+            <a href="/admin/staff/" class="@if (Request::is('admin/staff')){{'active'}}@endif nav-link">Staff</a>
+            <a href="/admin/departments/" class="@if (Request::is('admin/departments')){{'active'}}@endif nav-link">Departments</a>
         </div>
         <div class="container">
             @if(auth()->check())
