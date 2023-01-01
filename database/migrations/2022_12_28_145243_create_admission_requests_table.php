@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('last_name');
             $table->bigInteger('course')->unsigned()->index()->nullable();
            $table->foreign('course')->references('id')->on('courses');
+           $table->string('email');
             $table->timestamps();
         });
     }

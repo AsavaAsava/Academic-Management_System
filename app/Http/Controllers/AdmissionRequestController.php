@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\API\RegisterController;
 use Illuminate\Http\Request;
 use App\Models\AdmissionRequest;
+use Illuminate\Support\Facades\Http;
 
 class AdmissionRequestController extends Controller
 {
@@ -29,7 +31,7 @@ class AdmissionRequestController extends Controller
             'first_name'=> 'required',
             'last_name' => 'required',
             'course' => 'required',
-            'grade' => 'required',
+            'email' => 'required'
         ]);
 
         return AdmissionRequest::create($request->all());
@@ -70,4 +72,34 @@ class AdmissionRequestController extends Controller
     {
         return AdmissionRequest::destroy($id);
     }
+
+    /**
+     * Approve admission request.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function approve($id)
+    {
+        $ar= AdmissionRequest::find($id);
+        $pass = "word";
+        $reg = new Request([
+        'name' => $ar->first_name,
+        'email' => $ar->email,
+        'password' => $pass,
+        'c_password' => $pass]);
+       
+        
+        $regCon = new RegisterController();
+        $mailCon = new sendMailController();
+
+        $mailCon->sendAcceptanceMail($ar->email,$ar->first_name,$pass);
+        $regCon->register($reg);
+        $this->destroy($id);
+
+        return "Successful";
+
+
+        
+        } 
 }

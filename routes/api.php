@@ -15,6 +15,10 @@ use App\Http\Controllers\GroupController;
 use App\Http\Controllers\AssesmentItemController;
 use App\Http\Controllers\AnnouncementController;
 use App\Http\Controllers\ClassAllocationController;
+use App\Http\Controllers\AdmissionRequestController;
+use App\Http\Controllers\sendMailController;
+
+
 
 
 /*
@@ -49,9 +53,14 @@ Route::controller(StaffController::class) -> group(function(){
 
 
 
+Route::resource('schools',SchoolController::class);
+Route::get('/schools/search/{name}',[SchoolController::class,'search']);
 
 Route::resource('courses',CourseContoller::class);
 Route::get('/courses/search/{name}',[CourseContoller::class,'search']);
+
+Route::resource('admissions/requests',AdmissionRequestController::class);
+Route::get('admissions/requests/approve/{id}',[AdmissionRequestController::class,'approve']);
 
 Route::resource('groups',GroupController::class);
 Route::get('/courses/search/{name}',[GroupController::class,'search']);
@@ -67,10 +76,12 @@ Route::get('/announcement/students/{studid}',[AnnouncementController::class,'sea
 Route::resource('allocation',ClassAllocationController::class);
 Route::get('/allocation/lecturers/{lecid}',[ClassAllocationController::class,'searchLecturer']);
 
+Route::get('/mails/acceptance/{address}',[sendMailController::class,'sendAcceptanceMail']);
+Route::get('/mails/message/{address}',[sendMailController::class,'sendMessageMail']);
+
 
 
 Route::middleware('auth:sanctum')->group( function () {
-    Route::resource('schools',SchoolController::class);
-    Route::get('/schools/search/{name}',[SchoolController::class,'search']);  
+      
 });
 
