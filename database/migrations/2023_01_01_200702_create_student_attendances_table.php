@@ -18,7 +18,7 @@ return new class extends Migration
             $table->bigInteger('class_id')->unsigned()->index()->nullable();
            $table->foreign('class_id')->references('id')->on('lecture_sessions');
            $table->bigInteger('student')->unsigned()->index()->nullable();
-           $table->foreign('student')->references('id')->on('students');
+           //$table->foreign('student')->references('id')->on('students');
             $table->timestamps();
         });
     }

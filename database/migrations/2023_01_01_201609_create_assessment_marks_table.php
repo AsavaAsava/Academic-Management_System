@@ -16,9 +16,9 @@ return new class extends Migration
         Schema::create('assessment_marks', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('assesment')->unsigned()->index()->nullable();
-           $table->foreign('assesment')->references('id')->on('assessmet_items');
+           //$table->foreign('assesment')->references('id')->on('assessment_items');
            $table->bigInteger('student')->unsigned()->index()->nullable();
-           $table->foreign('student')->references('id')->on('students');
+           //$table->foreign('student')->references('id')->on('students');
            $table->bigInteger('marks');
             $table->timestamps();
         });
