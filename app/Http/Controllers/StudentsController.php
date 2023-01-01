@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\students;
+use App\Models\UnitAllocation;
 
 class StudentsController extends Controller
 {
@@ -72,5 +73,9 @@ class StudentsController extends Controller
 
         return redirect()->route('students.index')
             ->with('success', 'Student deleted successfully');
+    }
+    public function assign_unit(Request $request){
+         UnitAllocation::create($request->all());
+         //view
     }
 }

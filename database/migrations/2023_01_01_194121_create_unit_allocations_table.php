@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('unit_allocations', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('lecturer')->unsigned()->index()->nullable();
-           $table->foreign('lecturer')->references('id')->on('lecturers');
+            $table->bigInteger('student')->unsigned()->index()->nullable();
+           $table->foreign('lstudent')->references('id')->on('students');
            $table->bigInteger('unit')->unsigned()->index()->nullable();
            $table->foreign('unit')->references('id')->on('units');
             $table->timestamps();

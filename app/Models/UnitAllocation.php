@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class UnitAllocation extends Model
 {
     use HasFactory;
-    protected $fillable = ['lecturer','unit'];
+    protected $fillable = ['student','unit'];
 }
