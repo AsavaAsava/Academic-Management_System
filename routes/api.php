@@ -17,6 +17,7 @@ use App\Http\Controllers\AnnouncementController;
 use App\Http\Controllers\ClassAllocationController;
 use App\Http\Controllers\AdmissionRequestController;
 use App\Http\Controllers\sendMailController;
+use App\Http\Controllers\apiUnitController;
 
 
 
@@ -79,7 +80,8 @@ Route::get('/allocation/lecturers/{lecid}',[ClassAllocationController::class,'se
 Route::get('/mails/acceptance/{address}',[sendMailController::class,'sendAcceptanceMail']);
 Route::get('/mails/message/{address}',[sendMailController::class,'sendMessageMail']);
 
-
+Route::get('/mails/acceptance/{address}',[sendMailController::class,'sendAcceptanceMail']);
+Route::get('/mails/message/{address}',[sendMailController::class,'sendMessageMail']);
 
 Route::middleware('auth:sanctum')->group( function () {
       

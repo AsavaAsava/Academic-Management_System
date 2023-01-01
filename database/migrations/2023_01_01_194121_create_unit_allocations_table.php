@@ -13,12 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('messages', function (Blueprint $table) {
+        Schema::create('unit_allocations', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->string('message');
-            $table->bigInteger('lecturer');
-            $table->bigInteger('student');
+            $table->bigInteger('lecturer')->unsigned()->index()->nullable();
+           $table->foreign('lecturer')->references('id')->on('lecturers');
+           $table->bigInteger('unit')->unsigned()->index()->nullable();
+           $table->foreign('unit')->references('id')->on('units');
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('messages');
+        Schema::dropIfExists('unit_allocations');
     }
 };

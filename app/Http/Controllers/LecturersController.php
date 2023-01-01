@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Lecturers;
 
 class LecturersController extends Controller
 {
@@ -13,7 +14,7 @@ class LecturersController extends Controller
      */
     public function index()
     {
-        //
+        return Lecturers::all();
     }
 
     /**
@@ -24,7 +25,7 @@ class LecturersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return Lecturers::create($request->all());
     }
 
     /**
@@ -35,7 +36,7 @@ class LecturersController extends Controller
      */
     public function show($id)
     {
-        //
+        return Lecturers::find($id);
     }
 
     /**
@@ -47,7 +48,9 @@ class LecturersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $lec = Lecturers::find($id);
+        $lec ->update($request->all());
+        return $lec;
     }
 
     /**
@@ -58,6 +61,6 @@ class LecturersController extends Controller
      */
     public function destroy($id)
     {
-        //
+        return Lecturers::destroy($id);
     }
 }

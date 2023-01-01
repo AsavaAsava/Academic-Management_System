@@ -22,16 +22,16 @@ class sendMailController extends Controller
     //dd("Mail Sent Successfully!");
 }
 
-public function sendMessageMail($address,$username,$password)
+public function sendMessageMail($address,$title,$message)
 {
     $mailData = [
-    "username" => $username,
-    "password" => $password
+    "title" => $title,
+    "message" => $message
 ];
 
 
 Mail::to($address)->send(new MessageMail($mailData));
 
-dd("Mail Sent Successfully!");
+
 }
 }
