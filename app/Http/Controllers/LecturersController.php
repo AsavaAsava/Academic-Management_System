@@ -72,7 +72,8 @@ class LecturersController extends Controller
         $units_array = $uCon->get_units($year,$sem);
 
         $mailCon = new sendMailController();
-
+        $mailCon->sendUnitsMail($email_array,$units_array);
+        //view
 
     }
 }

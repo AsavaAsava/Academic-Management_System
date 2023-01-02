@@ -38,10 +38,7 @@ Mail::to($address)->send(new MessageMail($mailData));
 public function sendUnitsMail($addresses,$units)
 {
     
-        Mail::to($address)->send(new UnitsMail($mailData));
+    Mail::to($addresses)->send(new UnitsMail($units));
     
-
-
-
 }
 }
