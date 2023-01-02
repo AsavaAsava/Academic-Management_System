@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Mail\AcceptanceMail;
 use App\Mail\MessageMail;
+use App\Mail\UnitsMail;
 use Illuminate\Support\Facades\Mail;
 
 class sendMailController extends Controller
@@ -31,6 +32,15 @@ public function sendMessageMail($address,$title,$message)
 
 
 Mail::to($address)->send(new MessageMail($mailData));
+
+
+}
+public function sendUnitsMail($addresses,$units)
+{
+    
+        Mail::to($address)->send(new UnitsMail($mailData));
+    
+
 
 
 }

@@ -34,6 +34,11 @@ class UnitsController extends Controller
         Unit::destroy($id);
         return view('units');
     }
+    public function get_units($year,$sem){
+        $conditions = ['year' => $year,'semester'=>$sem];
+        $mails = Unit::select('name')->where($conditions)->list();
+        return $mails;
+    }
 
 }
 

@@ -78,4 +78,8 @@ class StudentsController extends Controller
          UnitAllocation::create($request->all());
          //view
     }
+    public function get_mails($group){
+        $mails = students::select('email')->where('groupID',$group)->list();
+        return $mails;
+    }
 }

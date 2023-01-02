@@ -63,4 +63,16 @@ class LecturersController extends Controller
     {
         return Lecturers::destroy($id);
     }
+
+    public function sendUnitRequest($group,$year,$sem){
+        $stCon = new StudentsController;
+        $uCon = new UnitsController;
+
+        $email_array = $stCon->get_mails($group);
+        $units_array = $uCon->get_units($year,$sem);
+
+        $mailCon = new sendMailController();
+
+
+    }
 }

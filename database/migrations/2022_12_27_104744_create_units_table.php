@@ -19,6 +19,7 @@ return new class extends Migration
             $table->bigInteger('course')->unsigned()->index()->nullable();
             $table->foreign('course')->references('id')->on('courses');
             $table->string('year');
+            $table->string('semester');
             $table->timestamps();
         });
     }
