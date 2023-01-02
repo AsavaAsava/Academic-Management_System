@@ -64,6 +64,7 @@ class LecturersController extends Controller
         return Lecturers::destroy($id);
     }
 
+    
     public function sendUnitRequest($group,$year,$sem){
         $stCon = new StudentsController;
         $uCon = new UnitsController;

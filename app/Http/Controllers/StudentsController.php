@@ -94,5 +94,9 @@ class StudentsController extends Controller
         $mails = students::select('email')->where('groupID',$group)->list();
         return $mails;
     }
+    public function get_email($id){
+        $mail = students::select('email')->where('id',$id)->pluck();
+        return $mail;
+    }
 }
 

@@ -187,7 +187,7 @@ table, td { color: #000000; } #u_body a { color: #0000ee; text-decoration: under
 
       </td>
     </tr>
-  </tbody>
+  </tbody> 
 </table>
 
 <table id="u_content_button_1" style="font-family:arial,helvetica,sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">

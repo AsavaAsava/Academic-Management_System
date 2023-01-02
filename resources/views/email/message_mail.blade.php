@@ -115,7 +115,7 @@ table, td { color: #000000; } #u_body a { color: #0000ee; text-decoration: under
     <tr>
       <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:40px 10px 0px;font-family:'Rubik',sans-serif;" align="left">
         
-  <h1 class="v-font-size" style="margin: 0px; color: #ffffff; line-height: 140%; text-align: center; word-wrap: break-word; font-weight: normal; font-family: Arvo; font-size: 22px;"><strong>Lorem ipsum dolor sit amet</strong></h1>
+  <h1 class="v-font-size" style="margin: 0px; color: #ffffff; line-height: 140%; text-align: center; word-wrap: break-word; font-weight: normal; font-family: Arvo; font-size: 22px;"><strong>{{$mailData['title']}}</strong></h1>
 
       </td>
     </tr>
@@ -128,7 +128,7 @@ table, td { color: #000000; } #u_body a { color: #0000ee; text-decoration: under
       <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:5px 80px 10px;font-family:'Rubik',sans-serif;" align="left">
         
   <div style="color: #ffffff; line-height: 140%; text-align: center; word-wrap: break-word;">
-    <p style="font-size: 14px; line-height: 140%;">Lorem ipsum dolor sit amet, consec tetur adip iscing elit, sed do eiusmod tempor incid idunt ut labore et dolore magna aliqua. Quis ipsum suspend.</p>
+    <p style="font-size: 14px; line-height: 140%;">{{$mailData['message']}}</p>
   </div>
 
       </td>
