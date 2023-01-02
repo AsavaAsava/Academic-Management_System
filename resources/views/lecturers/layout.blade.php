@@ -10,12 +10,14 @@
                 <i class="fa-solid fa-arrow-right"></i>
             </div>
         </div>
-        <div class="navigation-link">
-            <div class="row">
-                <p class="navigation-title">Quizzes</p>
-                <i class="fa-solid fa-arrow-right"></i>
+        <a href="/lecturers/quiz">
+            <div class="navigation-link">
+                <div class="row">
+                    <p class="navigation-title">Quizzes</p>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
             </div>
-        </div>
+        </a>
         <div class="navigation-link">
             <div class="row">
                 <p class="navigation-title">Results</p>
