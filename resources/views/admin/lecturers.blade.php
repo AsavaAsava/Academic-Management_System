@@ -24,7 +24,6 @@
             <div class="form-container">
                 <label for="">Group</label>
                 <select name="" id="group-select">
-                    <option value="">Just Pain</option>
                 </select>
             </div>
 
@@ -171,7 +170,7 @@
         var _token = document.getElementsByName("_token")[0];
         var _lec = document.getElementById("lecturers-select")
         var _unit = document.getElementById('unit-select');
-        var group = document.getElementById('group-select')
+        var _group = document.getElementById('group-select')
 
 
 
