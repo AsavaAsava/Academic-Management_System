@@ -8,11 +8,37 @@ use App\Models\UnitAllocation;
 
 class StudentsController extends Controller
 {
-    //
+    /*
     public function show_students()
     {
         return view('students');
+    } */
+
+    public function show_timetable()
+    {
+        return view('timetable');
     }
+    public function show_units()
+    {
+        return view('units');
+    }
+    public function show_fees()
+    {
+        return view('fees');
+    }
+    public function show_attendance()
+    {
+        return view('attendance');
+    }
+    public function show_coursework_marks()
+    {
+        return view('coursework_marks');
+    }
+    public function show_student_details()
+    {
+        return view('student_details');
+    }
+    
 
     public function index()
     {
@@ -78,4 +104,6 @@ class StudentsController extends Controller
          UnitAllocation::create($request->all());
          //view
     }
+    
 }
+

@@ -37,4 +37,4 @@ Route :: get('/students/attendance', 'App\Http\Controllers\StudentsController@sh
 Route :: get('/students/coursework_marks','App\Http\Controllers\StudentsController@show_coursework_marks');
 Route :: get('/students/student_details','App\Http\Controllers\StudentsController@show_student_details');
 
-Route::resource('students', StudentsController::class);
+//Route::resource('students', StudentsController::class);
