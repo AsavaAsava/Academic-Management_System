@@ -24,6 +24,5 @@ class FeesController extends Controller
         $item->update(array('balance'=>$amount));
     }
 
-    public function pay_fees(){
-    }
+  
 }
