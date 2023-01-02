@@ -109,6 +109,10 @@
                     </thead>
 
                     <tbody>
+                        @foreach($attendances as $attendance)
+                        <td>{{$attendance -> class_id}} </td>
+                        <td>{{$attendance -> Attendance}}</td>
+                        @endforeach
                         
                     </tbody>
                 </table>

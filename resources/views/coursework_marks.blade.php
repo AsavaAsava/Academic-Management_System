@@ -108,6 +108,12 @@
                     </thead>
 
                     <tbody>
+                        @foreach($assessments as $assessment)
+                        <td>{{$assessment->id}}</td>
+                        <td>{{$assessment->assessment}}</td>
+                        <td>{{$assessment->marks}}</td>
+
+                        @endforeach
                         
                     </tbody>
                 </table>

@@ -107,6 +107,10 @@
                     </thead>
 
                     <tbody>
+                        @foreach($units as $unit)
+                        <td>{{$unit -> id}}</td>
+                        <td>{{$unit -> unit}}</td>
+                        @endforeach
                         
                     </tbody>
                 </table>

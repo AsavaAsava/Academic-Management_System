@@ -19,6 +19,7 @@ class AdmissionRequestController extends Controller
         return AdmissionRequest::all();
     }
 
+
     /**
      * Store a newly created resource in storage.
      *
@@ -33,7 +34,6 @@ class AdmissionRequestController extends Controller
             'course' => 'required',
             'email' => 'required'
         ]);
-
         return AdmissionRequest::create($request->all());
     }
 

@@ -105,12 +105,14 @@
 
                     <thead>
                         <th>student_id</th>
-                        <th>balance</th>
-                        
+                        <th>balance</th>      
                     </thead>
 
                     <tbody>
-                        
+                        @foreach($fees as $fee)
+                        <td>{{$fee->students_id}}</td>
+                        <td>{{$fee->balance}}</td>
+                        @endforeach
                     </tbody>
                 </table>
             </section>

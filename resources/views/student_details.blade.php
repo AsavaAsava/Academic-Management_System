@@ -115,14 +115,16 @@
                     </thead>
 
                     <tbody>
+                        @foreach($details as $detail)
                         <td > <img src="/img/profile.png" style="border-radius: 30px; border: 5px solid white; padding:2px;" height="100" alt=""> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
+                        <td>{{$detail -> student_id}} </td>
+                        <td>{{$detail -> email}}  </td>
+                        <td>{{$detail -> name}} </td>
+                        <td>{{$detail -> DOB}} </td>
+                        <td>{{$detail -> sex}} </td>
+                        <td>{{$detail -> address}} </td>
+                        <td>{{$detail -> phone}}  </td>
+                        @endforeach
                     
                     </tbody>
                 </table>
