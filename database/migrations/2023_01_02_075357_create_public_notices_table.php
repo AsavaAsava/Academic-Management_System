@@ -13,11 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('class_allocations', function (Blueprint $table) {
+        Schema::create('public_notices', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('lecturer')->unsigned()->index()->nullable();
-           $table->foreign('lecturer')->references('id')->on('lecturers');
-           
+            $table->string('to');
+            $table->string('title');
+            $table->string('message');
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('class_allocations');
+        Schema::dropIfExists('public_notices');
     }
 };

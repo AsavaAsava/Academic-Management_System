@@ -5,8 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Lecturers extends Model
+class ClassMaterial extends Model
 {
     use HasFactory;
-    protected $fillable = ['name'];
+
+    protected $fillable = ['name','description','file_url','class'];
 }

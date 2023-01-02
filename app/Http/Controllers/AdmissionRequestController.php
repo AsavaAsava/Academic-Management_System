@@ -16,7 +16,7 @@ class AdmissionRequestController extends Controller
      */
     public function index()
     {
-        return AdmissionRequest::all();
+        return AdmissionRequest::query()->with(['course'])->get();
     }
 
 

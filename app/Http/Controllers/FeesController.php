@@ -9,6 +9,8 @@ class FeesController extends Controller
 {
     //
     public function show_fees(){
+
+
         return view('fees');
     }
     public function credit($id,$amount){
@@ -21,4 +23,6 @@ class FeesController extends Controller
         $bal = $item->balance - $amount;
         $item->update(array('balance'=>$amount));
     }
+
+  
 }
