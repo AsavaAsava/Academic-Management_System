@@ -4,78 +4,81 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\students;
+use App\Models\AssessmentMark;
 use App\Models\UnitAllocation;
+use App\Models\FeeBalance;
+use App\Models\StudentAttendance;
+
 
 class StudentsController extends Controller
 {
-    //
-    public function show_students()
+  
+      /**
+     * Display the specified resource.
+     *
+     * 
+     * 
+     */
+    public function show_timetable()
     {
-        return view('students');
+        return view('timetable');
     }
-
-    public function index()
+      /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show_units($id)
     {
-        $students = students::latest()->paginate(5);
-        return view('students.index', compact('students'))->with('i', (request()->input('page', 1) - 1) * 5);
+        $units = UnitAllocation::find($id);
+        return view('units', ['units'=>$units]);
     }
-
-    public function create()
+      /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show_fees($id)
     {
-        return view('students.create');
+        $fees = FeeBalance::find($id);
+        return view('fees', ['fees'=>$fees]);
     }
-
-    public function store(Request $request)
+      /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show_attendance($id)
     {
-        $request->validate(
-            [
-                'email' => 'required',
-                'password' => 'required',
-                'name' => 'required',
-               
-
-            ]
-        );
-
-        students::create($request->all());
-
-        return redirect()->route('students.index')->with('success', 'Application Successful');
+        $attendance = StudentAttendance::find($id);
+        return view('attendance', ['attenadance'=>$attendance]);
     }
-
-    public function show(students $students)
+      /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show_coursework_marks($id)
     {
-        return view('students.show', compact('students'));
+        $marks = AssessmentMark::find($id);
+        return view('coursework_marks', ['marks'=>$marks]);
     }
-
-    public function edit(students $students)
+      /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show_student_details($id)
     {
-        return view('students.edit', compact('students'));
+        $details= students::find($id);
+        return view('student_details', ['details'=>$details]);
     }
-
-    public function update(Request $request, students $students)
-    {
-        $request->validate([
-            'email' => 'required',
-            'password' => 'required',
-            'name' => 'required',
-          
-        ]);
-
-        $students->update($request->all());
-
-        return redirect()->route('students.index')
-            ->with('success', 'student updated successfully');
-    }
-
-    public function destroy(students $students)
-    {
-        $students->delete();
-
-        return redirect()->route('students.index')
-            ->with('success', 'Student deleted successfully');
-    }
-    public function assign_unit(Request $request){
-         UnitAllocation::create($request->all());
-         //view
-    }
+    
+    
 }
+

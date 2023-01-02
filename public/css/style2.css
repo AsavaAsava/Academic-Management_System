@@ -339,7 +339,7 @@ section{
 }
 
 .shopping-cart table tr:nth-child(even){
-   background-color: #1f1d2b;
+   background-color: rgb(5, 58, 64);
 }
 
 .shopping-cart table thead th{

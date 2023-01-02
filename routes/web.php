@@ -70,3 +70,4 @@ Route::controller(LecturersViewController::class)->group(function () {
     Route::get('lecturers/class/{id}/materials', 'class_materials')->name('class_materials');
     Route::post('lecturers/class/materials/','add_material')->name('class_materials_add');
 });
+

@@ -22,7 +22,6 @@ return new class extends Migration
             $table->string('sex');
             $table->string('address');
             $table->string('phone');
-            $table->string('parent_name');
             $table->timestamps();
         });
     }
