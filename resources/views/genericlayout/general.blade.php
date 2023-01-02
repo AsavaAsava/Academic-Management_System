@@ -1,4 +1,4 @@
-
+<!--This is a generic layout with a form-->
 
 
 <!DOCTYPE html>
@@ -102,9 +102,7 @@
                     <option value="" disabled selected hidden>enter the category</option>
                     <option value="humanities">Humanities</option>
                     <option value="mathematics">Mathematics</option>
-                    <option value="equipment">Equipment</option>
-                    <option value="housekeeping">House Keeping</option>
-                    <option value="utensils">Utensils</option>
+                   
                 </select>
 
                 <input type="number" name="p_price" min="0" placeholder="enter the lecturer name" class="box" required>

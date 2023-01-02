@@ -9,4 +9,9 @@ class AdmissionRequest extends Model
 {
     use HasFactory;
     protected $fillable=['first_name','last_name','course','grade','email'];
+
+
+    public function course(){
+        return $this->belongsTo(Course::class,'course');
+    }
 }

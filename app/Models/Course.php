@@ -12,4 +12,8 @@ class Course extends Model
         'name',
         'school'
     ];
+
+    public function school(){
+        return $this->belongsTo(School::class,'school');
+    }
 }
