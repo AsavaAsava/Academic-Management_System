@@ -91,11 +91,11 @@ class StudentsController extends Controller
          //view
     }
     public function get_mails($group){
-        $mails = students::select('email')->where('groupID',$group)->list();
+        $mails = students::pluck('email')->where('groupID',$group)->toArray();
         return $mails;
     }
     public function get_email($id){
-        $mail = students::select('email')->where('id',$id)->pluck();
+        $mail = students::pluck('email')->where('id',$id);
         return $mail;
     }
 }
