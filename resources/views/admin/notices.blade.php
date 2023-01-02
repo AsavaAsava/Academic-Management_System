@@ -25,5 +25,15 @@
             </div>
         </div>
     </section>
+    <section class="admin-container admin-section" id="notices-unit-section">
+        <p class="admin-section-title">
+            Unit Registration Requests
+        </p>
+        <div class="form">
+            <div class="form-container">
+                
+            </div>
+        </div>
+    </section>
 </div>
 @endsection

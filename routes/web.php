@@ -44,6 +44,9 @@ Route::get('admin/staff/', function () {
 Route::get('admin/notices/', function () {
     return view("admin/notices");
 })->name('admin_notices');
+Route::get('admin/lecturers/', function () {
+    return view("admin/lecturers");
+})->name('admin_notices');
 
 Route::get('admin/', function () {
     return view('admin/index');

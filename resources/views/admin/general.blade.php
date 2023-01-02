@@ -19,6 +19,7 @@
             <a href="/admin/notices/" class="@if (Request::is('admin/notices')){{'active'}}@endif nav-link">Announcements</a>
             <a href="/admin/staff/" class="@if (Request::is('admin/staff')){{'active'}}@endif nav-link">Staff</a>
             <a href="/admin/departments/" class="@if (Request::is('admin/departments')){{'active'}}@endif nav-link">Departments</a>
+            <a href="/admin/lecturers/" class="@if (Request::is('admin/lecturers')){{'active'}}@endif nav-link">Lecturers</a>
         </div>
         <div class="container">
             @if(auth()->check())
@@ -37,5 +38,11 @@
         @yield('content')
     </main>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.full.min.js"></script><script>
+    $(document).ready(function() {
+        $('select').select2();
+    });
+</script>
 
 </html>

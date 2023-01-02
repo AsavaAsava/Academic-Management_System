@@ -132,7 +132,6 @@
         var name = document.getElementById("create-dep-name");
         var _token = document.getElementsByName("_token")[0];
 
-        console.log(name);
         var myHeaders = new Headers();
         myHeaders.append('X-CSRF-TOKEN', _token.value)
         // myHeaders.append("Authorization", "Bearer 1|zvzY2LUa4Um6gkePeNXKoRH4Omn4quaLBKXwgtnh");
