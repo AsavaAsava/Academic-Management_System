@@ -13,11 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('class_allocations', function (Blueprint $table) {
+        Schema::create('class_materials', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('lecturer')->unsigned()->index()->nullable();
-           $table->foreign('lecturer')->references('id')->on('lecturers');
-           
+            $table -> string('name');
+            $table -> string('description')->nullable();
+            $table -> string('file_url');
+            $table -> foreignId('class');
+            $table -> foreign('class')->references('id')->on("class_allocations")->onDelete('cascade');
+            
             $table->timestamps();
         });
     }
@@ -29,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('class_allocations');
+        Schema::dropIfExists('class_materials');
     }
 };

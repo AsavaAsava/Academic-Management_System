@@ -1,12 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    @yield('content')
-</body>
-</html>
+@extends('lecturers/base')
+
+
+@section('content')
+<aside>
+    <div class="navigation-links">
+        <div class="navigation-link">
+            <div class="row">
+                <p class="navigation-title">Materials</p>
+                <i class="fa-solid fa-arrow-right"></i>
+            </div>
+        </div>
+        <div class="navigation-link">
+            <div class="row">
+                <p class="navigation-title">Quizzes</p>
+                <i class="fa-solid fa-arrow-right"></i>
+            </div>
+        </div>
+        <div class="navigation-link">
+            <div class="row">
+                <p class="navigation-title">Results</p>
+                <i class="fa-solid fa-arrow-right"></i>
+            </div>
+        </div>
+        <div class="navigation-link">
+            <div class="row">
+                <p class="navigation-title">Attendance</p>
+                <i class="fa-solid fa-arrow-right"></i>
+            </div>
+        </div>
+
+    </div>
+</aside>
+<main>
+    @yield('main_content')
+</main>
+@endsection

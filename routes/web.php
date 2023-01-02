@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LecturersViewController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentsController;
 
@@ -60,3 +61,12 @@ Route::get('/students/coursework_marks', 'App\Http\Controllers\StudentsControlle
 Route::get('/students/student_details', 'App\Http\Controllers\StudentsController@show_student_details');
 
 Route::resource('students', StudentsController::class);
+
+
+// Lecturer routes
+Route::controller(LecturersViewController::class)->group(function () {
+    Route::get('lecturers/', 'index');
+    Route::get('lecturers/class/{id}/','class_index');
+    Route::get('lecturers/class/{id}/materials', 'class_materials')->name('class_materials');
+    Route::post('lecturers/class/materials/','add_material')->name('class_materials_add');
+});
