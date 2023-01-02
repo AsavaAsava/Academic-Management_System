@@ -196,7 +196,7 @@ header{
 }
 
 #admissions-list{
-    min-width: 20vw;
+    min-width: 90vw;
 }
 #admissions-detail{
     width: 70vw;
@@ -356,4 +356,9 @@ margin-right: 0.5em;
 }
 .full-btn{
     width: 100%;
+}
+.row-wrap{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
 }

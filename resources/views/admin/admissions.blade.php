@@ -12,7 +12,7 @@
         </div>
         </p>
     </section>
-    <section class="admin-container admin-section" id="admissions-detail">
+    <!-- <section class="admin-container admin-section" id="admissions-detail">
         @if(Request::get('id'))
         @else
         <div class="div-placeholder">
@@ -20,7 +20,7 @@
             <p class="caption">Select a student to begin admission process</p>
         </div>
         @endif
-    </section>
+    </section> -->
 
 
 </div>

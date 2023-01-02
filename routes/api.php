@@ -19,6 +19,7 @@ use App\Http\Controllers\AdmissionRequestController;
 use App\Http\Controllers\sendMailController;
 use App\Http\Controllers\apiUnitController;
 use App\Http\Controllers\LecturersController;
+use App\Http\Controllers\PublicNoticeController;
 use App\Http\Controllers\UnitsApiController;
 
 /*
@@ -50,7 +51,10 @@ Route::controller(StaffController::class)->group(function () {
     Route::put('staff/{id?}', 'update');
 });
 
-
+Route::controller(PublicNoticeController::class) ->group(function () {
+    Route::get('public/notices/','index');
+    Route::post('public/notices/','create');
+});
 
 Route::resource('schools', SchoolController::class);
 Route::resource('lecturers', LecturersController::class);

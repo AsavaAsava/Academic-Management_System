@@ -13,7 +13,9 @@
 
 <body>
     <header>
-        <h2 id="text-logo">Stellar School</h2>
+        <a href='/admin'>
+            <h2 id="text-logo">Stellar School</h2>
+        </a>
         <div class="nav-links">
             <a href="/admin/admissions/" class="@if (Request::is('admin/admissions')){{'active'}}@endif nav-link">Admissions</a>
             <a href="/admin/notices/" class="@if (Request::is('admin/notices')){{'active'}}@endif nav-link">Announcements</a>
@@ -21,7 +23,7 @@
             <a href="/admin/departments/" class="@if (Request::is('admin/departments')){{'active'}}@endif nav-link">Departments</a>
             <a href="/admin/lecturers/" class="@if (Request::is('admin/lecturers')){{'active'}}@endif nav-link">Lecturers</a>
         </div>
-        <div class="container">
+       
             @if(auth()->check())
             <div class="user-profile">
 
@@ -31,7 +33,7 @@
             <p class="logout-link">Login</p>
             @endif
 
-        </div>
+        
     </header>
 
     <main>
@@ -39,7 +41,8 @@
     </main>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.full.min.js"></script><script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.full.min.js"></script>
+<script>
     $(document).ready(function() {
         $('select').select2();
     });
