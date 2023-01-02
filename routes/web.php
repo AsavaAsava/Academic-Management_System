@@ -66,14 +66,16 @@ Route::resource('students', StudentsController::class);
 // Lecturer routes
 Route::controller(LecturersViewController::class)->group(function () {
     Route::get('lecturers/', 'index');
-    Route::get('lecturers/class/{id}/','class_index');
+    Route::get('lecturers/class/{id}/', 'class_index');
     Route::get('lecturers/class/{id}/materials', 'class_materials')->name('class_materials');
-    Route::post('lecturers/class/materials/','add_material')->name('class_materials_add');
-    Route::get('lecturers/class/{id}/quiz/','quizzes')->name('class_quiz');
-    Route::post('lecturers/class/quiz/','createQuiz')->name('class_quiz_add');
-    Route::get('lecturers/class/{id}/results/','results')->name('results_lec');
-    Route::post('lecturers/class/results','postResults');
-    Route::get('lecturers/class/{id}/attendance','attendance')->name('attendance_lec');
-    Route::post('lecturers/class/attendance','postAttendance');
+    Route::post('lecturers/class/materials/', 'add_material')->name('class_materials_add');
+    Route::get('lecturers/class/{id}/quiz/', 'quizzes')->name('class_quiz');
+    Route::post('lecturers/class/quiz/', 'createQuiz')->name('class_quiz_add');
+    Route::get('lecturers/class/{id}/results/', 'results')->name('results_lec');
+    Route::post('lecturers/class/results', 'postResults');
+    Route::get('lecturers/class/{id}/attendance', 'attendance')->name('attendance_lec');
+    Route::post('lecturers/class/attendance', 'postAttendance');
+    Route::get('lecturers/class/{id}/messaging/', 'messaging')->name('messaging_lec');
+    Route::post('lecturers/class/messaging/student', 'sendToStudent');
+    Route::post('lecturers/class/messaging/group', 'sendToGroup');
 });
-

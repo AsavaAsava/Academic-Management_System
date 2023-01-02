@@ -57,29 +57,68 @@ class LecturersViewController extends Controller
     }
     public function createQuiz(Request $request)
     {
-        Quiz::create($request->all(['class','name','total']));
+        Quiz::create($request->all(['class', 'name', 'total']));
         return redirect()->route('class_quiz', ['id' => $request->class]);
     }
-    public function results($id){
+    public function results($id)
+    {
         $class = ClassAllocation::query()->with(['unit_', 'group_'])->find($id);
-        $quizzes = Quiz::where('class',$id)->get();
+        $quizzes = Quiz::where('class', $id)->get();
         $students = students::all();
-        $context = ['class'=>$class,'quizzes'=>$quizzes,'students'=>$students];
-        return view('lecturers/results',$context);
+        $context = ['class' => $class, 'quizzes' => $quizzes, 'students' => $students];
+        return view('lecturers/results', $context);
     }
-    public function postResults(Request $req){
-        Results::create($req->all(['quiz','student','marks']));
-        return redirect()->route('results_lec',['id'=>$req->class]);
+    public function postResults(Request $req)
+    {
+        Results::create($req->all(['quiz', 'student', 'marks']));
+        return redirect()->route('results_lec', ['id' => $req->class]);
     }
-    public function attendance($id){
+    public function attendance($id)
+    {
         $class = ClassAllocation::query()->with(['unit_', 'group_'])->find($id);
         $students = students::all();
-        
-        $context = ['class'=>$class,'students'=>$students];
-        return view('lecturers/attendance',$context);
+
+        $context = ['class' => $class, 'students' => $students];
+        return view('lecturers/attendance', $context);
     }
-    public function postAttendance(Request $req){
-        StudentAttendance::create($req->all(['class_id','created_at','student']));
-        return redirect()->route('attendance_lec',['id'=>$req->class_id]);
+    public function postAttendance(Request $req)
+    {
+        StudentAttendance::create($req->all(['class_id', 'created_at', 'student']));
+        return redirect()->route('attendance_lec', ['id' => $req->class_id]);
+    }
+    public function messaging($id)
+    {
+        $class = ClassAllocation::query()->with(['unit_', 'group_'])->find($id);
+        $students = students::all();
+        $context = ['class' => $class, 'students' => $students];
+
+        return view('lecturers/messaging', $context);
+    }
+
+    public function sendToStudent(Request $req)
+    {
+        $title = $req->title;
+        $message = $req->message;
+        $sid = $req->student_id;
+        $class_id = $req->class_id;
+        $msgController = new MessageController();
+        $msgController->sendToStudent($sid, $title, $message);
+
+        return redirect()->route('messaging_lec', ['id' => $class_id]);
+    }
+
+    public function sendToGroup(Request $req)
+    {
+        $title = $req->title;
+        $message = $req->message;
+        // $sid = $req->student_id;
+        $class_id = $req->class_id;
+
+        $class = ClassAllocation::find($class_id);
+        $group = $class->group;
+
+        $msgController = new MessageController();
+        $msgController->sendToGroup($group, $title, $message);
+        return redirect()->route('messaging_lec', ['id' => $class_id]);
     }
 }

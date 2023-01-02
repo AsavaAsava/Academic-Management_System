@@ -134,3 +134,6 @@ aside{
 .material-card-title{
     font-weight: 600;
 }
+#send-mail-row{
+    justify-content:space-between
+}
